@@ -10,8 +10,8 @@ backup_dir = '/var/db_backups'
 def createdb(name, dbuser, passwd, owner, description, contact):
     try:
         os.popen("%s run -d -P --name %s --restart on-failure -e POSTGRES_USER=%s \
-                 -e POSTGRES_DB=%s -e POSTGRES_PASS=%s -e OWNER=%s -e DESCRIPTION=\"%s\" \
-                 -e DBaaS=true -e CONTACT=%s %s 2>/dev/null" % \
+                 -e POSTGRES_DB=%s -e POSTGRES_PASS=%s -l OWNER=%s -l DESCRIPTION=\"%s\" \
+                 -l DBaaS=true -l CONTACT=%s %s 2>/dev/null" % \
                  (docker, name, dbuser, name, passwd, owner, description, contact, image)) 
         res = os.popen("%s ps -l" % docker).read()
         print(res)
