@@ -4,8 +4,7 @@ import optparse
 import sys
 
 docker = '/usr/bin/docker'
-image = 'fredhutch/postgres'
-backup_dir = '/var/db_backups'
+image = 'fredhutch/postgres:9.5'
 
 def createdb(name, dbuser, passwd, owner, description, contact):
     try:
@@ -13,7 +12,7 @@ def createdb(name, dbuser, passwd, owner, description, contact):
                  -e POSTGRES_DB=%s -e POSTGRES_PASS=%s -l OWNER=%s -l DESCRIPTION=\"%s\" \
                  -l DBaaS=true -l CONTACT=%s %s 2>/dev/null" % \
                  (docker, name, dbuser, name, passwd, owner, description, contact, image)) 
-        res = os.popen("%s ps -l" % docker).read()
+        res = os.popen("%s ps -l --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'" % docker).read()
         print(res)
     except Exception, e:
         print("An errort occured: %s" % e)
