@@ -131,20 +131,20 @@ A very basic web console if provided. To run it you'll need Python 2.7 and Flask
 
 If everything is working, you'll be presended with the following web page:
 
-![index](../roberts_branch/images/index.png?raw=true)
+![index](../master/images/index.png?raw=true)
 
 To get a list of the current database conatiners running on the system, click on the "List Database Containers" link, which should result in something similar to the following:
 
-![list](../roberts_branch/images/list.png?raw=true)
+![list](../master/images/list.png?raw=true)
 
 To create a new database container, click on the "Create a Database Container" link, which will present you with a form similar to the following:
 
-![create](../roberts_branch/images/create.png?raw=true)
+![create](../master/images/create.png?raw=true)
 
 Fill out the form **completely** and click "Submit" which will result in a page similar to the following being displayed:
 
-![created](../roberts_branch/images/created.png?raw=true)
+![created](../master/images/created.png?raw=true)
 
 To view an inventory of database backup archives that are currently backed up to Amazon S3, click on the "List Database Backup Archives" link. This will provide you will a backup inventory similar to the page shown below:
 
-![backups](../roberts_branch/images/backups.png?raw=true)
+![backups](../master_branch/images/backups.png?raw=true)
