@@ -147,4 +147,4 @@ Fill out the form **completely** and click "Submit" which will result in a page 
 
 To view an inventory of database backup archives that are currently backed up to Amazon S3, click on the "List Database Backup Archives" link. This will provide you will a backup inventory similar to the page shown below:
 
-![backups](../master_branch/images/backups.png?raw=true)
+![backups](../master/images/backups.png?raw=true)
