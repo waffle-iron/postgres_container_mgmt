@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Create a new Postgres Container</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>Create a new Postgres Container</h1>
+            </div>
+            <div id="content">
+                <form method="post" action="{{ url_for('created') }}">
+                  <label for="dbname">DB/Container Name:</label><input type="text" name="dbname" /><br />
+                  <label for="dbuser">DB Username:</label><input type="text" name="dbuser" /><br />
+                  <label for="dbuserpass">DB Password:</label><input type="password" name="dbuserpass" /><br />
+                  <label for="owner">Owner:</label><input type="text" name="owner" /><br />
+                  <label for="contact">Contact:</label><input type="text" name="contact" /><br />
+                  <label for="description">Description:</label><input type="text" name="description" /><br />
+                  <label for="memlimit">Memory Limit ('m' or 'g'):</label><input type="text" name="memlimit" /><br />
+                  <input type="submit" />
+                </form>
+            </div>
+            <div class="title">
+                <h1>Navigation</h1>
+            </div>
+                <ul>
+                    <li><a href="{{ url_for('list') }}"><strong>List Database Conatiners</strong></a></li>
+                    <li><a href="{{ url_for('cloudbackups') }}"><strong>List Database Backup Archives (S3)</strong></a></li>
+                </ul>
+        </div>
+    </body>
+</html>
