@@ -127,7 +127,7 @@ Sending backups to the Cloud (s3://fredhutch-postgres-backups)
 
 ### Web Interface
 
-A very basic web console if provided. To run it you'll need Python 2.7 and Flask installed (apt-get install -y python-flask). To run the web console just execute the "webui.py" script and point a web browser at "http://<servername>:1776" (replace "<servername>" with the name of the system were you are running the script.
+A very basic web console if provided. To run it you'll need Python 2.7 and Flask installed (apt-get install -y python-flask). To run the web console just execute the "webui.py" script and point a web browser at "http://servername:1776" (replace "servername" with the name of the system were you are running the script.
 
 If everything is working, you'll be presended with the following web page:
 
