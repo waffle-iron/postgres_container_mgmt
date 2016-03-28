@@ -1,7 +1,7 @@
  <html>
     <head>
         <title>DB Container Created</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
         <div id="container">
@@ -30,6 +30,7 @@
                     <li><a href="{{ url_for('list') }}">List Database Conatiners</a></li>
                     <li><a href="{{ url_for('create_form') }}">Create Another Database Conatiner</a></li>
                     <li><a href="{{ url_for('cloudbackups') }}"><strong>List Database Backup Archives (S3)</strong></a></li>
+                    <li><a href="{{ url_for('logout') }}"><strong>Log Out</strong></a></li>
                 </ul>
             </div>
         </div>

@@ -5,17 +5,25 @@ import sys
 
 docker = '/usr/bin/docker'
 image = 'fredhutch/postgres:9.5'
+dbvol = '/var/postgres_dbs'
 
 def createdb(name, dbuser, passwd, owner, description, contact, memlimit):
     try:
+        os.popen("mkdir -p %s/%s" % (dbvol, name))
         os.popen("%s run -d -P --name %s --restart on-failure -e POSTGRES_USER=%s \
-                 -e POSTGRES_DB=%s -e POSTGRES_PASS=%s -l OWNER=%s -l DESCRIPTION=\"%s\" \
-                 -l DBaaS=true -l CONTACT=%s -m=%s  %s 2>/dev/null" % \
-                 (docker, name, dbuser, name, passwd, owner, description, contact, memlimit, image)) 
+                 -e POSTGRES_DB=%s -e POSTGRES_PASSWORD=%s -l OWNER=%s -l DESCRIPTION=\"%s\" \
+                 -l DBaaS=true -l CONTACT=%s -m=%s -v %s/%s:/var/lib/postgresql/data %s 2>/dev/null" % \
+                 (docker, name, dbuser, name, passwd, owner, description, contact, memlimit, dbvol, name, image))
         res = os.popen("%s ps -l --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'" % docker).read()
-        print(res)
+        if __name__ == "__main__":
+            print(res)
+        else:
+            return(res)
     except Exception, e:
-        print("An errort occured: %s" % e)
+        if __name__ == "__main__":
+            print("An error occured: %s" % e)
+        else:
+            return("An error occured: %s" % e)
 
 def main():
     p = optparse.OptionParser(usage="usage: %prog --name=<container/dbname> --dbuser=<username> --password=<password> --owner=<owner> --description='<description>' [--memlimit=<num><m/g> (optional)]", version="%prog 1.0")
@@ -36,8 +44,6 @@ def main():
         opt.memlimit = '2g' 
 
     createdb(opt.name, opt.dbuser, opt.passwd, opt.owner, opt.description, opt.contact, opt.memlimit)
-    
-   
 
 if __name__ == "__main__":    
     main()

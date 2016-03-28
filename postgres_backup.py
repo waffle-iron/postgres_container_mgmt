@@ -6,7 +6,7 @@ import time
 
 docker = '/usr/bin/docker'
 backups = '/var/db-backups/'
-aws = '/usr/local/bin/aws'
+aws = '/usr/bin/aws'
 bucket = "s3://fredhutch-postgres-backups"
 
 t = time.localtime()

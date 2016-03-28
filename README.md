@@ -73,20 +73,20 @@ The output of the above command should look something like the following:
 
 ```
 container_name  container_id  db_name         username   port   mem_limit size       owner           contact                   status
-maxquant4       9b6e30304b28  maxquant4       maxquant   32812  2048MB    2.5MB      vi/paulovich_a  xyz@fredhutch.org        Up 3 hours
-maxquant3       24ed1a9200e7  maxquant3       maxquant   32811  2048MB    600KB      vi/paulovich_a  xyz@fredhutch.org        Up 3 hours
-maxquant2       32922e049ce5  maxquant2       maxquant   32810  768MB     63MB       vi/paulovich_a  xyz@fredhutch.org        Up 4 hours
-maxquant        389a1941130f  maxquant        maxquant   32804  768MB     1.3MB      vi/paulovich_a  xyz@fredhutch.org        Up 4 hours
-jimmy           87795f7b365d  jimmy           maxquant   32803  768MB     117.4MB    vi/paulovich_a  xyz@fredhutch.org        Up 4 hours
-scicomp_demo    288453e3c82a  scicomp_demo    scicomp    32792  None      5.33GB     ad/scicomp      rmcdermo@fredhutch.org   Up 28 hours
-demodb01        18d67e487b68  demodb01        demouser   32791  None      63GB       None            demo@fredhutch.org       Up 29 hours
-trump_db        18eb91dfc2de  trump_db        trump      32790  None      17.75MB    tt/trump        trump@trump.com          Up 29 hours
-turdblossom     a3bc3dadbf6c  turdblossom     turd       32789  None      254.54MB   cr/turd         turd@fredhutch.com       Up 29 hours
-cpas            6a706cbec97b  cpas            cpas       32787  None      563MB      sr/proteomics   gaffer@fredhutch.org     Up 30 hours
-it_budget       1ce047c36987  it_budget       budget     32786  None      639MB      ad/finance      mrmoney@fredhutch.org    Up 30 hours
-genomic_stuff   d65b81b75e37  genomic_stuff   genoics    32785  None      989KB      sr/genomic      dna@fredhutch.org        Up 30 hours
-oncoscape_brain 58972326c5c6  oncoscape_brain oncoscape  32784  None      777KB      hb/sttr         rmcdermo@fredhutch.org   Up 30 hours
-testlabel       01940f0c27e6  testlabel       test       32783  None      17.55MB    ad/scicomp      rmcdermo@fredhutch.org   Up 30 hours
+maxquant4       9b6e30304b28  maxquant4       maxquant   32812  2048MB    2.5MB      vi/paulovich_a  clin@fredhutch.org        Up 3 hours
+maxquant3       24ed1a9200e7  maxquant3       maxquant   32811  2048MB    600KB      vi/paulovich_a  clin@fredhutch.org        Up 3 hours
+maxquant2       32922e049ce5  maxquant2       maxquant   32810  768MB     63MB       vi/paulovich_a  clin@fredhutch.org        Up 4 hours
+maxquant        389a1941130f  maxquant        maxquant   32804  768MB     1.3MB      vi/paulovich_a  clin@fredhutch.org        Up 4 hours
+jimmy           87795f7b365d  jimmy           maxquant   32803  768MB     117.4MB    vi/paulovich_a  clin@fredhutch.org        Up 4 hours
+scicomp_demo    288453e3c82a  scicomp_demo    scicomp    32792  None      5.33GB     ad/scicomp      rmcdermo@fredhutch.org    Up 28 hours
+demodb01        18d67e487b68  demodb01        demouser   32791  None      63GB       None            demo@fredhutch.org        Up 29 hours
+trump_db        18eb91dfc2de  trump_db        trump      32790  None      17.75MB    tt/trump        trump@trump.com           Up 29 hours
+turdblossom     a3bc3dadbf6c  turdblossom     turd       32789  None      254.54MB   cr/turd         turd@fredhutch.com        Up 29 hours
+cpas            6a706cbec97b  cpas            cpas       32787  None      563MB      sr/proteomics   gafking@fredhutch.org     Up 30 hours
+it_budget       1ce047c36987  it_budget       budget     32786  None      639MB      ad/finance      mrmoney@fredhutch.org     Up 30 hours
+genomic_stuff   d65b81b75e37  genomic_stuff   genoics    32785  None      989KB      sr/genomic      jdelrow@fredhutch.org     Up 30 hours
+oncoscape_brain 58972326c5c6  oncoscape_brain oncoscape  32784  None      777KB      hb/sttr         rmcdermo@fredhutch.org    Up 30 hours
+testlabel       01940f0c27e6  testlabel       test       32783  None      17.55MB    ad/scicomp      rmcdermo@fredhutch.org    Up 30 hours
 ```
 
 #### Database Backups
@@ -131,20 +131,20 @@ A very basic web console if provided. To run it you'll need Python 2.7 and Flask
 
 If everything is working, you'll be presended with the following web page:
 
-![index](../master/images/index.png?raw=true)
+![index](../roberts_branch/images/index.png?raw=true)
 
 To get a list of the current database conatiners running on the system, click on the "List Database Containers" link, which should result in something similar to the following:
 
-![list](../master/images/list.png?raw=true)
+![list](../roberts_branch/images/list.png?raw=true)
 
 To create a new database container, click on the "Create a Database Container" link, which will present you with a form similar to the following:
 
-![create](../master/images/create.png?raw=true)
+![create](../roberts_branch/images/create.png?raw=true)
 
 Fill out the form **completely** and click "Submit" which will result in a page similar to the following being displayed:
 
-![created](../master/images/created.png?raw=true)
+![created](../roberts_branch/images/created.png?raw=true)
 
 To view an inventory of database backup archives that are currently backed up to Amazon S3, click on the "List Database Backup Archives" link. This will provide you will a backup inventory similar to the page shown below:
 
-![backups](../master/images/backups.png?raw=true)
+![backups](../roberts_branch/images/backups.png?raw=true)

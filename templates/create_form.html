@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Create a new Postgres Container</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
         <div id="container">
@@ -17,7 +17,7 @@
                   <label for="contact">Contact:</label><input type="text" name="contact" /><br />
                   <label for="description">Description:</label><input type="text" name="description" /><br />
                   <label for="memlimit">Memory Limit ('m' or 'g'):</label><input type="text" name="memlimit" /><br />
-                  <input type="submit" />
+                  <input type="submit" value="Create DB Container" />
                 </form>
             </div>
             <div class="title">
@@ -26,6 +26,7 @@
                 <ul>
                     <li><a href="{{ url_for('list') }}"><strong>List Database Conatiners</strong></a></li>
                     <li><a href="{{ url_for('cloudbackups') }}"><strong>List Database Backup Archives (S3)</strong></a></li>
+                    <li><a href="{{ url_for('logout') }}"><strong>Log Out</strong></a></li>
                 </ul>
         </div>
     </body>
