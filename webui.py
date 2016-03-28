@@ -101,5 +101,6 @@ def created():
 if __name__ == '__main__':
   app.run( 
         host="0.0.0.0",
-        port=int("1776")
+        port=int("1776"),
+        ssl_context='adhoc'
   )
